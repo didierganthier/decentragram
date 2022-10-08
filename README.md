@@ -1,6 +1,6 @@
 # DecentraGram
 
-> Decentralized Social Media. Built using Next.js, React, and Tailwind CSS. Web3 integration with Moralis, Metamask and Ethers.js. Also uses Lens Protofcol to get the profile data.
+> Decentralized Social Media. Built using Next.js. Web3 integration with Moralis, Metamask and Ethers.js. Also uses Lens Protofcol to get the profile data.
 
 
 ## Built With
