@@ -1,10 +1,13 @@
 import styles from "../styles/Home.module.css";
 import { Tabs, Button } from "antd";
+import { Profile, urqlClient } from "./api/lensCalls";
 
 
 const { TabPane } = Tabs;
 
-export default function Home() {
+export default function Home( { profile } ) {
+
+  console.log(profile);
   
   let nftArray;
   let myNFT;
@@ -17,27 +20,27 @@ export default function Home() {
     <div className={styles.container}>
       <img
         className={styles.banner}
-        src={"https://ipfs.moralis.io:2053/ipfs/QmNgA9MNWFfRaoKzBt21VghQopnKXBgVxzyGvv5qjsV4Vw/media/2"}
+        src={profile.coverPicture.original.url}
         alt="cover"
       />
       <div className={styles.profile}>
         <div className={styles.profileLeft}>
           <img
             className={styles.profileImg}
-            src={"https://ipfs.moralis.io:2053/ipfs/QmNgA9MNWFfRaoKzBt21VghQopnKXBgVxzyGvv5qjsV4Vw/media/1"}
+            src={profile.picture.original.url}
             alt="profileImg"
           />
           <div className={styles.info}>
-            <div className={styles.name}>Web3 Mage</div>
-            <div className={styles.handle}>moralismage.lens</div>
-            <div className={styles.bio}>Buidling web3 solutions with magical moralis mage abilities 🧙‍♂️</div>
+            <div className={styles.name}>{profile.name}</div>
+            <div className={styles.handle}>{profile.handle}</div>
+            <div className={styles.bio}>{profile.bio}</div>
             <div className={styles.follow}>
               <div>Followers</div>
-              <div>472</div>
+              <div>{profile.stats.totalFollowers}</div>
             </div>
             <div className={styles.follow}>
               <div>Following</div>
-              <div>34</div>
+              <div>{profile.stats.totalFollowing}</div>
             </div>
           </div>
         </div>
@@ -77,5 +80,13 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export const getServerSideProps = async () => {
+  const response = await urqlClient.query(Profile).toPromise();
+
+  return {
+    props: { profile: response?.data.profile },
+  };
 }
 
