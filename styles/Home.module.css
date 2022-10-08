@@ -1,0 +1,121 @@
+.container{
+  height: 100vh;
+  width: 100vw;
+}
+
+.profile{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.banner{
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+
+.profileLeft{
+  width: 350px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileRight{
+  padding: 20px;
+  width: calc(100vw - 350px);
+}
+
+.profileImg {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: relative;
+  bottom: 80px;
+  
+}
+
+.info {
+  width: 60%;
+  position: relative;
+  bottom: 60px;
+}
+
+.name {
+  width: 60%;
+  display: flex;
+  justify-content: left;
+  font-weight: bold;
+  font-size: 24px;
+  color: black
+}
+
+
+.handle {
+  width: 60%;
+  display: flex;
+  justify-content: left;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.626)
+}
+
+.bio {
+  display: flex;
+  justify-content: left;
+  font-size: 14px;
+  color: black;
+  margin-top: 20px;
+}
+
+.follow {
+  width: 80%;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  margin-top: 20px;
+}
+
+.animation {
+  border: 0px;
+  height: 300px;
+  margin-top: 10px;
+}
+
+.followingNFTs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.followMe {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 150px;
+}
+
+.myNFT {
+  border: 0px;
+  height: 250px;
+  width: 420px;
+}
+
+.promptOne {
+  margin: 20px 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.promptTwo {
+  margin: 10px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.626);
+  width: 300px;
+}
