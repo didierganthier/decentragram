@@ -9,7 +9,9 @@ const { TabPane } = Tabs;
 export default function Home({ profile, nftArray }) {
 
   console.log(profile);
-
+  
+  let nftArray;
+  
   let myNFT;
 
   async function follow() {
